@@ -4,9 +4,9 @@ body {
     background: linear-gradient(135deg, #74ebd5, #acb6e5);
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;  /* Alinea contenido al inicio */
     min-height: 100vh;
-    overflow: auto;  /* Permite desplazamiento */
+    overflow-y: scroll;  /* Permite desplazamiento vertical */
 }
 
 .album-container {
@@ -19,7 +19,7 @@ body {
     text-align: center;
 }
 
-h1 {
+h1, h2 {
     color: #333;
     font-size: 24px;
     margin-bottom: 10px;
@@ -27,8 +27,8 @@ h1 {
 
 .photo-grid {
     display: flex;
-    flex-direction: column;  /* Apila las imágenes verticalmente */
-    gap: 15px;
+    flex-direction: column;  /* Fotos apiladas verticalmente */
+    gap: 20px;
 }
 
 .photo-grid img {
@@ -36,19 +36,13 @@ h1 {
     height: auto;         /* Mantiene la proporción */
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.photo-grid img:hover {
-    transform: scale(1.03);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .pagination {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 15px;
+    margin-top: 20px;
 }
 
 button {
@@ -59,21 +53,9 @@ button {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-button:hover {
-    background-color: #5a53d3;
-    transform: scale(1.05);
 }
 
 button:disabled {
     background-color: #ccc;
-    cursor: default;
-    transform: none;
-}
-
-#page-indicator {
-    font-size: 16px;
-    color: #555;
+    cursor: not-allowed;
 }
